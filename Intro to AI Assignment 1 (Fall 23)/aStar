@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+#define Size 9
+
+using namespace std;
+struct Coordinate{
+    int x;
+    int y;
+    bool free;
+};
+
+
+int main() {
+    int perceptionScenario; //1 or 2
+    cin>>perceptionScenario;
+    struct Coordinate infStone{};
+    cin>>infStone.x>>infStone.y;
+    infStone.free = true;
+    struct Coordinate thanos {0,0, true};
+    int pathLength = INT_MAX;
+    vector<vector<int>> map(Size, vector<int>(Size));
+    //0 means that the cell if safe for the next move
+    vector<vector<bool>> isVisited(Size, vector<bool>(Size));
+    for (int i=0; i<Size; i++){
+        for(int j=0; j<Size; j++){
+            map[i][j] = 0;
+            isVisited[i][j] = false;
+        }
+    }
+
+
+    return 0;
+}
