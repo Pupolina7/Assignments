@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message Empty {}
+
+message Item {
+    string item = 1;
+}
+
+message SizeResponse {
+    int32 size = 1;
+}
+
+message Full {
+    bool isFull = 1;
+}
+
+service Queue {
+  rpc Put(Item) returns (Full);
+  rpc Peek(Empty) returns (Item);
+  rpc Pop(Empty) returns (Item);
+  rpc Size(Empty) returns (SizeResponse);
+}
+
+
